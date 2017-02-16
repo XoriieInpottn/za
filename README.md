@@ -9,6 +9,18 @@ and project directory path.
 - Automatically recognize the modified files and only upload the new version
 instead of upload the whole folder.
 
+## Installation
+
+The tool is written in Python 3, so you need to install python3 first.
+
+Then, install "paramiko" package which allows us to use SSH in python.
+```bash
+pip install paramiko
+```
+
+Finally, copy za.py to your system's execution path, e.g., "/usr/local/bin"
+for Linux.
+
 ## Examples
 
 ### Initialize a ZA controlled directory
