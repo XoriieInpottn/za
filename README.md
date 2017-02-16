@@ -4,9 +4,9 @@ ZA is a tool used to synchronize local code to the server.
 It is designed for situations that have to synchronize files very frequently,
 like debugging a server-side program.
 The tool has the following features:
-1. Store server associated information, such as host name, user name, password
+- Store server associated information, such as host name, user name, password
 and project directory path.
-1. Automatically recognize the modified files and only upload the new version
+- Automatically recognize the modified files and only upload the new version
 instead of upload the whole folder.
 
 ## Examples
