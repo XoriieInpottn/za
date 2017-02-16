@@ -1,6 +1,6 @@
 # The ZA Project
 
-ZA is a tool used to synchronize local code to the server.
+ZA is a tool used to synchronize local files to the server.
 It is designed for situations that have to synchronize files very frequently,
 like debugging a server-side program.
 The tool has the following features:
@@ -52,10 +52,10 @@ default.
 
 ## About the Tool's Name
 
-Someone maybe interested in the question: "Why it is called za ?"
+Someone maybe interested in the question: "Why is it called za ?"
 Well, "za" is not short for any English phrase that have actual meanings.
 However, the truth may be sound a little disappointed,
-since I just choose two letter which lays closely form each other on the
+since I just choose two letters which lays closely form each other on the
  keyboard.
  Or it may be named after
 a wonderful kawaii girl's name... Erm... Who cares~
