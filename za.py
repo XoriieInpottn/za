@@ -139,7 +139,7 @@ class ZA(object):
             pass
         for item in self.files_to_remove:
             try:
-                path = os.path.join(self.project_dir_path, item[2:])
+                path = self._to_server_side_path(item)
                 sftp.remove(path)
                 del self.remote_info[item]
                 print('{} removed.'.format(path))
@@ -147,7 +147,7 @@ class ZA(object):
                 print('Failed to remove {}.'.format(path))
         for item in self.dirs_to_remove:
             try:
-                path = os.path.join(self.project_dir_path, item[2:])
+                path = self._to_server_side_path(item)
                 sftp.rmdir(path)
                 del self.remote_info[item]
                 print('{} removed.'.format(path))
@@ -155,7 +155,7 @@ class ZA(object):
                 print('Failed to remove {}.'.format(path))
         for item in self.dirs_to_create:
             try:
-                path = os.path.join(self.project_dir_path, item[2:])
+                path = self._to_server_side_path(item)
                 sftp.mkdir(path)
                 self.remote_info[item] = self.local_info[item]
                 print('{} created.'.format(path))
@@ -163,12 +163,16 @@ class ZA(object):
                 print('Failed to create {}.'.format(path))
         for item in self.files_to_create:
             try:
-                path = os.path.join(self.project_dir_path, item[2:])
+                path = self._to_server_side_path(item)
                 sftp.put(item, path)
                 self.remote_info[item] = self.local_info[item]
                 print('{} created.'.format(path))
             except Exception as e:
                 print('Failed to create {}.'.format(path))
+
+    def _to_server_side_path(self, client_path):
+        path = os.path.join(self.project_dir_path, client_path[2:])
+        return path.replace('\\', '/')
 
     def _dump_remote_info(self):
         with open(ZA.remote_info_path, 'w') as f:
